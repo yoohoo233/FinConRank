@@ -1,8 +1,5 @@
 # FinConRank Research Code
 
-Code-only preparation for public release under **Apache-2.0**, approved by the
-author and coauthors. This archive has not been committed or published to GitHub.
-Start a clean repository; do not import private Git history or local artifacts.
 
 ## Scope And Evaluation Boundary
 
