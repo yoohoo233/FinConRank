@@ -1,0 +1,28 @@
+experiment: finconrank_strict_nested_group_oof
+seed: 42
+languages: [en, zh]
+outer_folds: 5
+inner_folds: 4
+grouping_unit: source_report_group
+candidate_depth: 20
+model:
+  base: Qwen/Qwen2-VL-2B-Instruct
+  initialization_adapter: lightonai/MonoQwen2-VL-v0.1
+  variant: full
+  epochs: 3
+  learning_rate: 0.00002
+  margin: 0.2
+  micro_batch_size: 2
+  gradient_accumulation: 2
+  training_max_pixels: 200704
+  inference_batch_size: 2
+  inference_max_pixels: 602112
+selection:
+  primary_metric: nDCG@5
+  tie_break_metrics: [nDCG@10, MRR@10]
+  scope: current_outer_cross_fitted_inner_oof_only
+  outer_test_evaluations: 1
+leakage_guards:
+  historical_global_oof_scores: forbidden
+  human_audit_labels: forbidden
+  outer_test_qrels_for_selection: forbidden

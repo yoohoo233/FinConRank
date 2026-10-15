@@ -1,0 +1,18 @@
+FinConRank research code
+
+The author and coauthors approved Apache License, Version 2.0 for FinConRank.
+The full standard text is supplied in LICENSE. Preserve applicable upstream
+licenses and notices; FinConRank does not relicense third-party components.
+
+Upstream attribution:
+- Qwen/Qwen2-VL-2B-Instruct: base architecture, weights and processor.
+- lightonai/MonoQwen2-VL-v0.1: original visual reranker and trainable LoRA initialization.
+- FinRAGBench-V: benchmark and official retrieval/evaluation workflow.
+- PyTorch, Transformers, PEFT, NumPy, pandas, pypdf, pytrec_eval, Pillow,
+  Tesseract and the other named dependencies retain their own licenses.
+
+No upstream repository source tree, models, benchmark reports or images are
+bundled. Historical resource records label the two upstream models Apache-2.0;
+their exact license/model-card texts were not recovered or independently checked
+in this offline code-packaging task. This notice is attribution, not a substitute
+for upstream license notices or report-image reproduction permission.

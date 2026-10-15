@@ -1,0 +1,28 @@
+{
+  "model_repository": "yoohoo233/FinConRank",
+  "model_revision": "cf814c526580a8ddc011b9cd12429765580777ff",
+  "adapter_subfolders": {
+    "en": ["en/outer_0", "en/outer_1", "en/outer_2", "en/outer_3", "en/outer_4"],
+    "zh": ["zh/outer_0", "zh/outer_1", "zh/outer_2", "zh/outer_3", "zh/outer_4"]
+  },
+  "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+  "base_revision": "895c3a49bc3fa70a340399125c650a463535e71c",
+  "initial_adapter": "lightonai/MonoQwen2-VL-v0.1",
+  "initial_revision": "5d718b52d534290938ed79deedc620a7f6a6254f",
+  "environment_locations": {
+    "FINCONRANK_WORKSPACE": "",
+    "FINRAGBENCH_DATA_ROOT": "",
+    "FINCONRANK_BASE_MODEL": "",
+    "FINCONRANK_INITIAL_ADAPTER": "",
+    "FINCONRANK_BASELINE_DIR": "",
+    "FINCONRANK_SOURCE_RUN": "",
+    "FINCONRANK_SOURCE_OOF": "",
+    "FINCONRANK_INDEX_DIR": "",
+    "FINCONRANK_ROUTER_DIR": "",
+    "FINCONRANK_CONSTRAINTS": "",
+    "FINCONRANK_EN_IMAGES": "",
+    "FINCONRANK_ZH_IMAGES": ""
+  },
+  "evaluation_scope": "Query grouping on a shared fixed document corpus, not strictly unseen-page or unseen-report evaluation",
+  "automatic_loader": false
+}

@@ -1,0 +1,13 @@
+# Observed packaging environment, not a fresh installation or historical-runtime claim.
+torch==2.6.0+cu124
+transformers==4.45.2
+peft==0.19.1
+accelerate==1.13.0
+safetensors==0.7.0
+Pillow==11.3.0
+numpy==2.4.6
+pandas==2.3.3
+pyarrow==24.0.0
+pypdf==6.14.2
+pytrec_eval==0.5
+PyYAML==6.0.3
