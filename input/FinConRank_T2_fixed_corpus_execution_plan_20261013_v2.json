@@ -1,0 +1,221 @@
+{
+  "plan_id": "finconrank_t2_fixed_corpus_training_sensitivity_20261013_v2",
+  "supersedes_execution_scope": "finconrank_t2_local_training_sensitivity_20261013_v1",
+  "scope": "revision-driven descriptive development-only sensitivity under a fixed-corpus, query-disjoint design with disclosed training-negative page/report exposure",
+  "scope_change_is_not_page_isolation_repair": true,
+  "project": ".",
+  "python": "<python-executable>",
+  "source_run": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733",
+  "source_run_name_is_historical_not_new_page_unseen_claim": true,
+  "page_audit_zip": "exports/finconrank_page_isolation_audit_20261013_100258.zip",
+  "page_audit_zip_sha256": "7196ec008d774299d7549c319270aa4554569a4356d18cfb430e81c317e947e7",
+  "old_blocked_t2_run": "artifacts/major_revision/finconrank_t2_training_sensitivity_20261013_084402",
+  "output_parent": "artifacts/major_revision",
+  "output_prefix": "finconrank_t2_fixed_corpus_v2_",
+  "units": [
+    {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    }
+  ],
+  "base_recipe": {
+    "variant": "full",
+    "margin": 0.2,
+    "learning_rate": 2e-05,
+    "reference_epoch": 3,
+    "micro_batch_size": 2,
+    "gradient_accumulation": 2,
+    "effective_pair_batch": 4,
+    "training_max_pixels": 200704,
+    "inference_batch_size": 2,
+    "inference_max_pixels": 602112,
+    "candidate_policy": "first-occurrence-deduplicated frozen ColQwen2 top-20 for the unit's validation queries; no page/report exclusion from that corpus pool",
+    "ranking": "FinConRank True-minus-False logit difference only; no calibration or fusion",
+    "base_model_revision": "895c3a49bc3fa70a340399125c650a463535e71c",
+    "initial_adapter_revision": "5d718b52d534290938ed79deedc620a7f6a6254f",
+    "epoch_curriculum_exposure_is_part_of_epoch_sensitivity": true
+  },
+  "training_families": [
+    {
+      "family_id": "reference_trajectory",
+      "margin": 0.2,
+      "learning_rate": 2e-05,
+      "train_epochs": 4,
+      "score_epochs": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "family_id": "margin_low",
+      "margin": 0.1,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    {
+      "family_id": "margin_high",
+      "margin": 0.4,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    {
+      "family_id": "lr_low",
+      "margin": 0.2,
+      "learning_rate": 1e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    {
+      "family_id": "lr_high",
+      "margin": 0.2,
+      "learning_rate": 4e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    }
+  ],
+  "evaluated_conditions": [
+    {
+      "condition_id": "reference_epoch3",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 3,
+      "factor": "reference",
+      "value": 3
+    },
+    {
+      "condition_id": "margin_0p1",
+      "family_id": "margin_low",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.1
+    },
+    {
+      "condition_id": "margin_0p4",
+      "family_id": "margin_high",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.4
+    },
+    {
+      "condition_id": "lr_1e5",
+      "family_id": "lr_low",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 1e-05
+    },
+    {
+      "condition_id": "lr_4e5",
+      "family_id": "lr_high",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 4e-05
+    },
+    {
+      "condition_id": "epoch2",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 2,
+      "factor": "epochs",
+      "value": 2
+    },
+    {
+      "condition_id": "epoch4",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 4,
+      "factor": "epochs",
+      "value": 4
+    }
+  ],
+  "exposure_and_label_policy": {
+    "reuse_original_training_pairs_without_filtering": true,
+    "known_cross_partition_negative_pages_allowed_under_disclosed_fixed_corpus_scope": true,
+    "known_negative_page_exposure_is_execution_blocker": false,
+    "unmapped_negative_report_metadata_must_be_recorded_not_claimed_clean": true,
+    "training_query_overlap_is_execution_blocker": true,
+    "new_positive_page_or_query_group_overlap_requires_author_review": true,
+    "training_supervision": "the original pairs for the unit's training queries only",
+    "training_worker_validation_qrels_access_allowed": false,
+    "outer_test_query_scoring_allowed": false,
+    "outer_test_qrels_access_allowed": false,
+    "validation_qrels_use": "CPU descriptive evaluation only after all planned predictions are frozen; no model/parameter/checkpoint selection"
+  },
+  "limits": {
+    "planned_training_jobs": 20,
+    "planned_checkpoint_scoring_jobs": 28,
+    "maximum_distinct_training_jobs_without_further_approval": 20,
+    "maximum_physical_gpus": 4,
+    "one_process_one_gpu": true,
+    "maximum_attempts_per_training_or_scoring_job": 2,
+    "page_exclusion_repair_allowed": false,
+    "full_50_unit_retraining_allowed": false,
+    "new_downloads_allowed": false,
+    "software_installation_allowed": false,
+    "fusion_reselection_allowed": false,
+    "subagents_allowed": false,
+    "paper_edits_allowed": false,
+    "original_code_edits_allowed": false
+  },
+  "reporting": {
+    "expected_pooled_validation_queries": {
+      "en": 216,
+      "zh": 342
+    },
+    "metrics": [
+      "nDCG@5",
+      "nDCG@10",
+      "MRR@10",
+      "Recall@5",
+      "Recall@10"
+    ],
+    "additional_precision_optional": true,
+    "reference": "same-unit newly trained reference_trajectory epoch_3_adapter",
+    "query_deltas": true,
+    "language_aggregation": "query-count-weighted over the two disjoint fixed validation folds",
+    "significance_tests": "not authorized; descriptive analysis only",
+    "best_parameter_selection": "not authorized",
+    "prohibited_claims": [
+      "page isolation repaired",
+      "unseen-report generalization established",
+      "reviewer 2 comment 6 fully satisfied",
+      "full nested system robustness established",
+      "multi-seed robustness established"
+    ]
+  }
+}

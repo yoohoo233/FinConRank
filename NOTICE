@@ -8,6 +8,10 @@ Upstream attribution:
 - Qwen/Qwen2-VL-2B-Instruct: base architecture, weights and processor.
 - lightonai/MonoQwen2-VL-v0.1: original visual reranker and trainable LoRA initialization.
 - FinRAGBench-V: benchmark and official retrieval/evaluation workflow.
+- DocReRank/DocReRank-Reranker: external direct-comparison model, revision
+  292fcbdd8bb3ce066cd6c9a0de2d8212ccbd8d3a. Historical model-card evidence records
+  CC-BY-4.0 and English. No DocReRank weights or upstream repository are bundled;
+  its applicable attribution/license conditions are not replaced by Apache-2.0.
 - PyTorch, Transformers, PEFT, NumPy, pandas, pypdf, pytrec_eval, Pillow,
   Tesseract and the other named dependencies retain their own licenses.
 

@@ -1,0 +1,1182 @@
+[
+  {
+    "job_id": "inner_en_outer0_inner0__reference_trajectory__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "reference_trajectory",
+      "margin": 0.2,
+      "learning_rate": 2e-05,
+      "train_epochs": 4,
+      "score_epochs": [
+        2,
+        3,
+        4
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "9a1b2583c65484c8fcc1db22045252e3170d9633d4cdab02b9fc44011cb80200",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__reference_epoch3__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "reference_epoch3",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 3,
+      "factor": "reference",
+      "value": 3
+    },
+    "depends_on": "inner_en_outer0_inner0__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner0.jsonl",
+    "candidate_sha256": "28358547dbd77d14655e4b8c1b4e826cebc5fd6f058212123afe9b9b36089d7d",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__epoch2__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "epoch2",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 2,
+      "factor": "epochs",
+      "value": 2
+    },
+    "depends_on": "inner_en_outer0_inner0__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner0.jsonl",
+    "candidate_sha256": "28358547dbd77d14655e4b8c1b4e826cebc5fd6f058212123afe9b9b36089d7d",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__epoch4__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "epoch4",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 4,
+      "factor": "epochs",
+      "value": 4
+    },
+    "depends_on": "inner_en_outer0_inner0__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner0.jsonl",
+    "candidate_sha256": "28358547dbd77d14655e4b8c1b4e826cebc5fd6f058212123afe9b9b36089d7d",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__margin_low__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "margin_low",
+      "margin": 0.1,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "9a1b2583c65484c8fcc1db22045252e3170d9633d4cdab02b9fc44011cb80200",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__margin_0p1__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "margin_0p1",
+      "family_id": "margin_low",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.1
+    },
+    "depends_on": "inner_en_outer0_inner0__margin_low__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner0.jsonl",
+    "candidate_sha256": "28358547dbd77d14655e4b8c1b4e826cebc5fd6f058212123afe9b9b36089d7d",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__margin_high__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "margin_high",
+      "margin": 0.4,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "9a1b2583c65484c8fcc1db22045252e3170d9633d4cdab02b9fc44011cb80200",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__margin_0p4__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "margin_0p4",
+      "family_id": "margin_high",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.4
+    },
+    "depends_on": "inner_en_outer0_inner0__margin_high__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner0.jsonl",
+    "candidate_sha256": "28358547dbd77d14655e4b8c1b4e826cebc5fd6f058212123afe9b9b36089d7d",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__lr_low__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "lr_low",
+      "margin": 0.2,
+      "learning_rate": 1e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "9a1b2583c65484c8fcc1db22045252e3170d9633d4cdab02b9fc44011cb80200",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__lr_1e5__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "lr_1e5",
+      "family_id": "lr_low",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 1e-05
+    },
+    "depends_on": "inner_en_outer0_inner0__lr_low__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner0.jsonl",
+    "candidate_sha256": "28358547dbd77d14655e4b8c1b4e826cebc5fd6f058212123afe9b9b36089d7d",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__lr_high__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "lr_high",
+      "margin": 0.2,
+      "learning_rate": 4e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "9a1b2583c65484c8fcc1db22045252e3170d9633d4cdab02b9fc44011cb80200",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner0__lr_4e5__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner0",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 42,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "lr_4e5",
+      "family_id": "lr_high",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 4e-05
+    },
+    "depends_on": "inner_en_outer0_inner0__lr_high__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner0.jsonl",
+    "candidate_sha256": "28358547dbd77d14655e4b8c1b4e826cebc5fd6f058212123afe9b9b36089d7d",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__reference_trajectory__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "reference_trajectory",
+      "margin": 0.2,
+      "learning_rate": 2e-05,
+      "train_epochs": 4,
+      "score_epochs": [
+        2,
+        3,
+        4
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "364b4297f66fc30c9a313e9a54cf90c361d29bd8c90440d61b295f2de4ce9663",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__reference_epoch3__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "reference_epoch3",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 3,
+      "factor": "reference",
+      "value": 3
+    },
+    "depends_on": "inner_en_outer0_inner1__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner1.jsonl",
+    "candidate_sha256": "8d541138aaa956775228685b52465a6ad1b33de2c9aad80775593ee10e80be14",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__epoch2__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "epoch2",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 2,
+      "factor": "epochs",
+      "value": 2
+    },
+    "depends_on": "inner_en_outer0_inner1__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner1.jsonl",
+    "candidate_sha256": "8d541138aaa956775228685b52465a6ad1b33de2c9aad80775593ee10e80be14",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__epoch4__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "epoch4",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 4,
+      "factor": "epochs",
+      "value": 4
+    },
+    "depends_on": "inner_en_outer0_inner1__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner1.jsonl",
+    "candidate_sha256": "8d541138aaa956775228685b52465a6ad1b33de2c9aad80775593ee10e80be14",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__margin_low__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "margin_low",
+      "margin": 0.1,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "364b4297f66fc30c9a313e9a54cf90c361d29bd8c90440d61b295f2de4ce9663",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__margin_0p1__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "margin_0p1",
+      "family_id": "margin_low",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.1
+    },
+    "depends_on": "inner_en_outer0_inner1__margin_low__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner1.jsonl",
+    "candidate_sha256": "8d541138aaa956775228685b52465a6ad1b33de2c9aad80775593ee10e80be14",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__margin_high__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "margin_high",
+      "margin": 0.4,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "364b4297f66fc30c9a313e9a54cf90c361d29bd8c90440d61b295f2de4ce9663",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__margin_0p4__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "margin_0p4",
+      "family_id": "margin_high",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.4
+    },
+    "depends_on": "inner_en_outer0_inner1__margin_high__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner1.jsonl",
+    "candidate_sha256": "8d541138aaa956775228685b52465a6ad1b33de2c9aad80775593ee10e80be14",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__lr_low__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "lr_low",
+      "margin": 0.2,
+      "learning_rate": 1e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "364b4297f66fc30c9a313e9a54cf90c361d29bd8c90440d61b295f2de4ce9663",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__lr_1e5__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "lr_1e5",
+      "family_id": "lr_low",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 1e-05
+    },
+    "depends_on": "inner_en_outer0_inner1__lr_low__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner1.jsonl",
+    "candidate_sha256": "8d541138aaa956775228685b52465a6ad1b33de2c9aad80775593ee10e80be14",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__lr_high__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "family": {
+      "family_id": "lr_high",
+      "margin": 0.2,
+      "learning_rate": 4e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_en_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "364b4297f66fc30c9a313e9a54cf90c361d29bd8c90440d61b295f2de4ce9663",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_en_outer0_inner1__lr_4e5__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_en_outer0_inner1",
+      "language": "en",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 43,
+      "expected_validation_queries": 108
+    },
+    "condition": {
+      "condition_id": "lr_4e5",
+      "family_id": "lr_high",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 4e-05
+    },
+    "depends_on": "inner_en_outer0_inner1__lr_high__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_en_outer0_inner1.jsonl",
+    "candidate_sha256": "8d541138aaa956775228685b52465a6ad1b33de2c9aad80775593ee10e80be14",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__reference_trajectory__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "reference_trajectory",
+      "margin": 0.2,
+      "learning_rate": 2e-05,
+      "train_epochs": 4,
+      "score_epochs": [
+        2,
+        3,
+        4
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "32f5f503c6f9d566e6237630298e563e8f36bfac98c9ef7077d7701543384b8c",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__reference_epoch3__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "reference_epoch3",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 3,
+      "factor": "reference",
+      "value": 3
+    },
+    "depends_on": "inner_zh_outer0_inner0__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner0.jsonl",
+    "candidate_sha256": "560106f4e45701a526c8fe0aacb1b273c9b87e51dfd5520fd4d1560b8456a800",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__epoch2__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "epoch2",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 2,
+      "factor": "epochs",
+      "value": 2
+    },
+    "depends_on": "inner_zh_outer0_inner0__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner0.jsonl",
+    "candidate_sha256": "560106f4e45701a526c8fe0aacb1b273c9b87e51dfd5520fd4d1560b8456a800",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__epoch4__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "epoch4",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 4,
+      "factor": "epochs",
+      "value": 4
+    },
+    "depends_on": "inner_zh_outer0_inner0__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner0.jsonl",
+    "candidate_sha256": "560106f4e45701a526c8fe0aacb1b273c9b87e51dfd5520fd4d1560b8456a800",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__margin_low__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "margin_low",
+      "margin": 0.1,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "32f5f503c6f9d566e6237630298e563e8f36bfac98c9ef7077d7701543384b8c",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__margin_0p1__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "margin_0p1",
+      "family_id": "margin_low",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.1
+    },
+    "depends_on": "inner_zh_outer0_inner0__margin_low__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner0.jsonl",
+    "candidate_sha256": "560106f4e45701a526c8fe0aacb1b273c9b87e51dfd5520fd4d1560b8456a800",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__margin_high__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "margin_high",
+      "margin": 0.4,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "32f5f503c6f9d566e6237630298e563e8f36bfac98c9ef7077d7701543384b8c",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__margin_0p4__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "margin_0p4",
+      "family_id": "margin_high",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.4
+    },
+    "depends_on": "inner_zh_outer0_inner0__margin_high__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner0.jsonl",
+    "candidate_sha256": "560106f4e45701a526c8fe0aacb1b273c9b87e51dfd5520fd4d1560b8456a800",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__lr_low__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "lr_low",
+      "margin": 0.2,
+      "learning_rate": 1e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "32f5f503c6f9d566e6237630298e563e8f36bfac98c9ef7077d7701543384b8c",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__lr_1e5__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "lr_1e5",
+      "family_id": "lr_low",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 1e-05
+    },
+    "depends_on": "inner_zh_outer0_inner0__lr_low__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner0.jsonl",
+    "candidate_sha256": "560106f4e45701a526c8fe0aacb1b273c9b87e51dfd5520fd4d1560b8456a800",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__lr_high__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "lr_high",
+      "margin": 0.2,
+      "learning_rate": 4e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner0/training_data/train_pairs.jsonl",
+    "pair_sha256": "32f5f503c6f9d566e6237630298e563e8f36bfac98c9ef7077d7701543384b8c",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner0__lr_4e5__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner0",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 0,
+      "training_seed": 10042,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "lr_4e5",
+      "family_id": "lr_high",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 4e-05
+    },
+    "depends_on": "inner_zh_outer0_inner0__lr_high__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner0.jsonl",
+    "candidate_sha256": "560106f4e45701a526c8fe0aacb1b273c9b87e51dfd5520fd4d1560b8456a800",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__reference_trajectory__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "reference_trajectory",
+      "margin": 0.2,
+      "learning_rate": 2e-05,
+      "train_epochs": 4,
+      "score_epochs": [
+        2,
+        3,
+        4
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "529c71d3f05ffc1feb0e8cac03bac7675b23301a061f9406d6cf370ae243c4b4",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__reference_epoch3__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "reference_epoch3",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 3,
+      "factor": "reference",
+      "value": 3
+    },
+    "depends_on": "inner_zh_outer0_inner1__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner1.jsonl",
+    "candidate_sha256": "fe7b18051df9c177e7033916ad684d8ee8ac4979e32b8b7e4ea5ad762d0ee7fe",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__epoch2__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "epoch2",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 2,
+      "factor": "epochs",
+      "value": 2
+    },
+    "depends_on": "inner_zh_outer0_inner1__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner1.jsonl",
+    "candidate_sha256": "fe7b18051df9c177e7033916ad684d8ee8ac4979e32b8b7e4ea5ad762d0ee7fe",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__epoch4__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "epoch4",
+      "family_id": "reference_trajectory",
+      "checkpoint_epoch": 4,
+      "factor": "epochs",
+      "value": 4
+    },
+    "depends_on": "inner_zh_outer0_inner1__reference_trajectory__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner1.jsonl",
+    "candidate_sha256": "fe7b18051df9c177e7033916ad684d8ee8ac4979e32b8b7e4ea5ad762d0ee7fe",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__margin_low__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "margin_low",
+      "margin": 0.1,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "529c71d3f05ffc1feb0e8cac03bac7675b23301a061f9406d6cf370ae243c4b4",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__margin_0p1__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "margin_0p1",
+      "family_id": "margin_low",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.1
+    },
+    "depends_on": "inner_zh_outer0_inner1__margin_low__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner1.jsonl",
+    "candidate_sha256": "fe7b18051df9c177e7033916ad684d8ee8ac4979e32b8b7e4ea5ad762d0ee7fe",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__margin_high__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "margin_high",
+      "margin": 0.4,
+      "learning_rate": 2e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "529c71d3f05ffc1feb0e8cac03bac7675b23301a061f9406d6cf370ae243c4b4",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__margin_0p4__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "margin_0p4",
+      "family_id": "margin_high",
+      "checkpoint_epoch": 3,
+      "factor": "margin",
+      "value": 0.4
+    },
+    "depends_on": "inner_zh_outer0_inner1__margin_high__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner1.jsonl",
+    "candidate_sha256": "fe7b18051df9c177e7033916ad684d8ee8ac4979e32b8b7e4ea5ad762d0ee7fe",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__lr_low__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "lr_low",
+      "margin": 0.2,
+      "learning_rate": 1e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "529c71d3f05ffc1feb0e8cac03bac7675b23301a061f9406d6cf370ae243c4b4",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__lr_1e5__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "lr_1e5",
+      "family_id": "lr_low",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 1e-05
+    },
+    "depends_on": "inner_zh_outer0_inner1__lr_low__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner1.jsonl",
+    "candidate_sha256": "fe7b18051df9c177e7033916ad684d8ee8ac4979e32b8b7e4ea5ad762d0ee7fe",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__lr_high__train",
+    "kind": "train",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "family": {
+      "family_id": "lr_high",
+      "margin": 0.2,
+      "learning_rate": 4e-05,
+      "train_epochs": 3,
+      "score_epochs": [
+        3
+      ]
+    },
+    "train_pairs": "artifacts/retrieval/finconrank_strict_nested_group_oof_20260908_092733/tasks/inner_zh_outer0_inner1/training_data/train_pairs.jsonl",
+    "pair_sha256": "529c71d3f05ffc1feb0e8cac03bac7675b23301a061f9406d6cf370ae243c4b4",
+    "status": "PLANNED",
+    "attempts": []
+  },
+  {
+    "job_id": "inner_zh_outer0_inner1__lr_4e5__score",
+    "kind": "score",
+    "unit": {
+      "task_id": "inner_zh_outer0_inner1",
+      "language": "zh",
+      "outer_fold": 0,
+      "inner_fold": 1,
+      "training_seed": 10043,
+      "expected_validation_queries": 171
+    },
+    "condition": {
+      "condition_id": "lr_4e5",
+      "family_id": "lr_high",
+      "checkpoint_epoch": 3,
+      "factor": "learning_rate",
+      "value": 4e-05
+    },
+    "depends_on": "inner_zh_outer0_inner1__lr_high__train",
+    "candidate_path": "artifacts/major_revision/finconrank_t2_fixed_corpus_v2_20261013_123607/01_PROTOCOL_AND_INPUTS/validation_candidates/inner_zh_outer0_inner1.jsonl",
+    "candidate_sha256": "fe7b18051df9c177e7033916ad684d8ee8ac4979e32b8b7e4ea5ad762d0ee7fe",
+    "status": "PLANNED",
+    "attempts": []
+  }
+]

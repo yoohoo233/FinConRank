@@ -1,5 +1,26 @@
 # FinConRank Research Code
 
+## Revision Release Additions
+
+This candidate extends the original public-code archive without replacing its
+historical main-experiment algorithms. Author-provided public code reference:
+`229d81809d51fe887b3538ec1dfcd0a97f8a8e14` (not fetched or verified remotely).
+The original main `fusion_grid` still requires a positive FinConRank coefficient.
+Separate revision entry points implement three-score fusion and a four-score
+search allowing a zero FinConRank coefficient; the historical grid was not edited.
+
+See [Revision Entry Points](docs/REVISION_ENTRY_POINTS.md) for fusion ablations,
+same-ColQwen2-top-20 DocReRank comparison, descriptive local training sensitivity,
+paired statistical reporting, parser diagnostics and measured costs. Source Data
+is a separate archive of already frozen outputs, not regenerated experiments.
+The T2 files are archival runners with explicit prerequisites, not a new turnkey
+training framework or a page-isolation repair. No same-budget training comparison
+or new environment end-to-end verification is claimed.
+
+Code-only preparation for public release under **Apache-2.0**, approved by the
+author and coauthors. This archive has not been committed or published to GitHub.
+Update the existing public repository from a clean release copy; do not import
+private Git history, data, credentials or local experiment artifacts.
 
 ## Scope And Evaluation Boundary
 
